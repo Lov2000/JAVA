@@ -9,7 +9,7 @@ class ThrowExample {
 } 
 
 public class Example1{ 
-  public static void main(String args[]){ 
+  public static void main(String args[]){
    try{ 
      ThrowExample obj=new ThrowExample(); 
      obj.myMethod(1); 
