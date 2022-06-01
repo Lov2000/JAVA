@@ -1,0 +1,43 @@
+4. Create a class Customer having following members: 
+ 
+private String custNo 
+private String custName 
+private String category 
+ 
+Parameterized constructor to initialize all instance variables 
+Getter methods for all instance variables 
+ 
+Perform following validations in the constructor 
+ 
+· custNo must start with ‘C’ or ‘c’ 
+· custName must be atleast of 4 characters 
+· category must be either ‘Platinum’, ‘Gold’ or ‘Silver ‘ 
+ 
+When any of these validations fail, then raise a user defined 
+exception InvalidInputException
+public class Unit3_4 { 
+ public static void main(String[] args) { 
+ // TODO Auto-generated method stub 
+ Scanner sc = new Scanner(System.in); 
+ String custNo,custName,category; 
+ 
+ System.out.print("Enter The Customer Number: "); 
+ custNo = sc.nextLine(); 
+ System.out.print("Enter The Customer Name: "); 
+ custName = sc.nextLine(); 
+ System.out.print("Enter The Category: "); 
+ category = sc.nextLine(); 
+ 
+ Customer obj; 
+ try { 
+ obj = new Customer(custNo, custName, category); 
+ System.out.println(" Customer No: " + obj.getCustNo()); 
+ System.out.println(" Customer Name: " + obj.getCustName()); 
+ System.out.println(" Category: " + obj.getCategory()); 
+ } catch (InputInvalidException e) { 
+ // TODO Auto-generated catch block 
+ System.out.println(e.getStr()); 
+ } 
+ 
+ } 
+}
