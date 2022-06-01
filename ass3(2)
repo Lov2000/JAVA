@@ -1,0 +1,26 @@
+2.Write a Java program to describe usage of throws 
+clause 
+package exceptionalhandling; 
+import java.io.*; 
+import java.util.Scanner; 
+public class Throws { 
+ String name; 
+public static void main(String[] args) { 
+ Throws t = new Throws(); 
+ try { 
+ t.accept(); 
+ } 
+ catch(Exception e) { 
+ System.out.println(e.getMessage()); 
+ 
+ } 
+ 
+ } 
+public void accept() throws IOException{ 
+ BufferedReader br = new BufferedReader(new
+InputStreamReader(System.in)); 
+ System.out.println("enter your name"); 
+ name=br.readLine(); 
+ System.out.println("Name of Person:"+name); 
+ } 
+}
