@@ -1,0 +1,18 @@
+5. Write a Java program to create a text file in the path 
+c:\Java\abc.txt and check whether that file exists or not. Using 
+the command exists(), isDirectory(), isFile(), getName() and 
+getAbsolutePath(). 
+
+ package exceptionalhandling; 
+import java.io.File; 
+public class Exit { 
+public static void main(String[] args) { 
+ // TODO Auto-generated method stub
+ File f = new File("E:\\java"); 
+ System.out.println(f.exists()); 
+ System.out.println(f.getAbsolutePath()); 
+ System.out.println(f.isDirectory()); 
+ System.out.println(f.isFile()); 
+ System.out.println(f.getName()); 
+ } 
+}
