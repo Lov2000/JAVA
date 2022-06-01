@@ -1,0 +1,141 @@
+6. Create a class Employee having members as follows: 
+private int empNo 
+private String empName 
+private int empBasic 
+Parameterized constructor to initialize members. 
+Getter methods for all instance variables 
+Create a class WriteEmployee having main method. Ask user to enter details 
+of an employee and set them in an Employee object. Store details of this 
+object in a file emp.txt.
+ Read employee details from the file and display those details. 
+package exceptionalhandling; 
+import java.io.FileWriter; 
+import java.io.IOException; 
+import java.util.Scanner; 
+class Employee{ 
+private int empNo; 
+private String empName; 
+private int empBasic; 
+ Employee(int empNo,String empName,int empBasic){ 
+ empNo=this.empNo; 
+ empName=this.empName; 
+ empBasic=this.empBasic; 
+ 
+ } 
+public int getEmpNo() { 
+ return empNo; 
+ } 
+public void setEmpNo(int empNo) { 
+ this.empNo = empNo; 
+ } 
+public String getEmpName() { 
+ return empName; 
+ } 
+public void setEmpName(String empName) { 
+ this.empName = empName; 
+ } 
+public int getEmpBasic() { 
+ return empBasic; 
+ } 
+public void setEmpBasic(int empBasic) { 
+ this.empBasic = empBasic; 
+ } 
+ 
+} 
+public class WriterEmployee { 
+public static void main(String[] args) { 
+ Employee n= new Employee(1,"shagun",23); 
+ Scanner sc = new Scanner(System.in); 
+ System.out.println("enter mumber"); 
+ int n1=sc.nextInt(); 
+ 
+ n.setEmpNo(n1); 
+ System.out.println("enter name"); 
+ sc.nextLine(); 
+ String s= sc.nextLine(); 
+ System.out.println("enter basic"); 
+ n.setEmpName(s); 
+ 
+ int no=sc.nextInt(); 
+ 
+ n.setEmpBasic(no); 
+ System.out.println(n.getEmpNo()); 
+ System.out.println(n.getEmpName()); 
+ System.out.println(n.getEmpBasic()); 
+ 
+ 
+ try { 
+ FileWriter writer = new FileWriter("E:\\java\\file.txt"); 
+ writer.write("Emp Number :" + n.getEmpNo() + "\n Emp name: "+ 
+n.getEmpName()); 
+ writer.close(); 
+ } catch (IOException e) { 
+ // TODO Auto-generated catch block
+ e.printStackTrace(); 
+ } 
+ } 
+} 
+package unit_3; 
+import java.util.Scanner; 
+@SuppressWarnings("serial") 
+class InputInvalidException extends Exception{ 
+ String str; 
+ InputInvalidException(String s){ 
+ this.str=s; 
+ } 
+ public String getStr() { 
+ return str; 
+ } 
+ public void setStr(String str) { 
+ this.str = str; 
+ } 
+ 
+ 
+} 
+class Customer{ 
+ private String custNo; 
+ private String custName; 
+ private String category; 
+ 
+ Customer(String custNo, String custName, String category ) throws 
+InputInvalidException{ 
+ 
+ if(custNo.charAt(0) != 'C' || custName.charAt(0) != 'c') { 
+ throw new InputInvalidException("Customer No is not 
+correct"); 
+ }else if(custName.length()<4) { 
+ throw new InputInvalidException("Customer Name is too 
+short"); 
+ }else if(category.equals("Platinum") || category.equals("Gold") || 
+category.equals("Silver")) { 
+ this.custNo = custNo; 
+ this.custName = custName; 
+ this.category = category; 
+ 
+ }else { 
+ throw new InputInvalidException("Category not in the list"); 
+ } 
+ 
+ } 
+ 
+ public String getCustNo() { 
+ return custNo; 
+ } 
+ public String getCustName() { 
+ return custName; 
+ } 
+ public String getCategory() { 
+ return category; 
+ } 
+ 
+// public void setCustNo(String custNo) { 
+// this.custNo = custNo; 
+// } 
+// public void setCustName(String custName) { 
+// this.custName = custName; 
+// } 
+// public void setCategory(String category) { 
+// this.category = category; 
+// } 
+ 
+ 
