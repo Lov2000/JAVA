@@ -10,6 +10,5 @@ public  class access_modifiers {
         Employee emp1 = new Employee();
         emp1.id = 3;
         emp1.name = "Anand";
-
     }
 }
